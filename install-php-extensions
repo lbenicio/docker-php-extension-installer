@@ -3721,7 +3721,6 @@ fi
 
 sortModulesToInstall
 
-docker-php-source extract
 BUNDLED_MODULES="$(find /usr/src/php/ext -mindepth 2 -maxdepth 2 -type f -name 'config.m4' | xargs -n1 dirname | xargs -n1 basename | xargs)"
 configureInstaller
 
