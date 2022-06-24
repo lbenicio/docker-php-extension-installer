@@ -22,35 +22,6 @@ StandWithUkraine() {
 	fi
 }
 
-if test "$IPE_VERSION" = master && test "${CI:-}" != true; then
-	cat <<EOF
-
-#############################################################################################################
-#                                                                                                           #
-#                                            W A R N I N G ! ! !                                            #
-#                                                                                                           #
-# You are using an unsupported method to get install-php-extensions!                                        #
-#                                                                                                           #
-# Please update the way you fetch it. Read the instructions at                                              #
-# https://github.com/mlocati/docker-php-extension-installer#usage                                           #
-#                                                                                                           #
-# For example, if you get this script by fetching                                                           #
-# https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions    #
-# replace it with                                                                                           #
-# https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions #
-#                                                                                                           #
-# Sleeping for a while so you get bored of this and act ;)                                                  #
-#                                                                                                           #
-#############################################################################################################
-
-EOF
-	StandWithUkraine
-	sleep 10 || true
-else
-	printf 'install-php-extensions v.%s\n' "$IPE_VERSION"
-	StandWithUkraine
-fi
-
 # Reset the Internal Field Separator
 resetIFS() {
 	IFS='	 
